@@ -1,10 +1,9 @@
 problem_1: \
 1.1 Introduction
-#exsercise_1
-print "Hello, World!"
+#exsercise Hello, World!
+print ("Hello, World!")
 
-#exsercise_2
-#!/bin/python
+#exsercise Python if-else
 import math
 import os
 import random
@@ -12,130 +11,117 @@ import re
 import sys
 
 if __name__ == '__main__':
-    n = int(raw_input().strip())
-if n % 2 == 1:
-    print ("Weird")
-elif n % 2 ==0 and n in range(2,6):
-    print ('Not Weird')
-elif n % 2 == 0 and n in range(6,21):
-    print ('Weird')
-elif n % 2 == 0 and n>20:
-    print('Not Weird')
+    n = int(input().strip())
+    if n % 2 == 1:
+        print ("Weird")
+    elif n % 2 ==0 and n in range(2,6):
+        print ('Not Weird')
+    elif n % 2 == 0 and n in range(6,21):
+        print ('Weird')
+    elif n % 2 == 0 and n>20:
+        print('Not Weird')
 
-#exsercise_3
+#exsercise Arithmetic Operator
 if __name__ == '__main__':
-    a = int(raw_input())
-    b = int(raw_input())
+    a = int(input())
+    b = int(input())
     print(a+b)
     print(a-b)
     print(a*b)
 
-#exercise_4
-from __future__ import division
-a = int(raw_input())
-b = int(raw_input())
-print (a//b)
-print(a/b)
-
-#exercise_5
+#exercise Division
 if __name__ == '__main__':
-    n = int(raw_input())
+    a = int(input())
+    b = int(input())
+    print(a//b)
+    print(a/b)
+
+#exercise loops
+if __name__ == '__main__':
+    n = int(input())
 for i in range(0, n):
     print(i * i)
 
-#exercise_6
+#exercise Write a function
 def is_leap(year):
-    return year % 4 == 0 and (year % 400 == 0 or year % 100 != 0)
-year = int(raw_input())
+    leap = False
 
-#exercise7
-from __future__ import print_function
+    # Write your logic here
+    year % 4 == 0 and (year % 400 == 0 or year % 100 != 0)
+    return leap
+year = int(input())
+print(is_leap(year))
 
+#exercise Print function
 if __name__ == '__main__':
-    n = int(raw_input())
+    n = int(input())
     for i in range(1,n+1):
         print(i,end="")
 
 1.2 Data Types
 
-#exercise8
+#exercise List Comprehensions
 if __name__ == '__main__':
-    x = int(raw_input())
-    y = int(raw_input())
-    z = int(raw_input())
-    n = int(raw_input())
-
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
 permutations = [[i,j,k] for i in range(x+1) for j in range (y+1) for k in range (z+1)if (i+j+k != n)]
 print (permutations)
 
-#exercise9
+#exercise Find the Runner-Up Score
 if __name__ == '__main__':
-    n = int(raw_input())
-    arr = map(int, raw_input().split())
+    n = int(input())
+    arr = list(map(int,input().split()))
     arr.sort()
     arr.remove(max(arr))
 print(arr [-2])
 
-#exercise10
+#exercise Finding the Percentage
 if __name__ == '__main__':
-    n = int(raw_input())
+    n = int(input())
     student_marks = {}
     for _ in range(n):
-        line = raw_input().split()
-        name, scores = line[0], line[1:]
-        scores = map(float, scores)
+        name, *line = input().split()
+        scores = list(map(float, line))
         student_marks[name] = scores
-    query_name = raw_input()
+    query_name = input()
+
     sum_values = sum(student_marks[query_name])
     lenght = len(student_marks[query_name])
     average = sum_values/lenght
     print("{0:.2f}".format(average))
 
-#exersice11 DA FARE
-
-#exercise12 NON CAPITO
+#exersice Lists
 if __name__ == '__main__':
-    N = int(raw_input())
+    N = int(input())
+    results = []
 
-arr = []
-for i in range(N):
-    s = raw_input().split()
+    for _ in range(N):
+        x = input().split(" ")
+        command = x[0]
+        if command == 'pop':
+            results.pop()
+        if command == 'print':
+            print(results)
+        if command == 'append':
+            results.append(int(x[1]))
+        if command == 'insert':
+            results.insert(int(x[1]), int(x[2]))
+        if command == 'remove':
+            results.remove(int(x[1]))
+        if command == 'reverse':
+            results = results[::-1]
+        if command == 'sort':
+            results = sorted(results)
 
-    for i in range(1, len(s)):
-        s[i] = int(s[i])
-
-    if s[0] == "append":
-        arr.append(s[1])
-    elif s[0] == "extend":
-        arr.extend(s[1:])
-    elif s[0] == "insert":
-        arr.insert(s[1], s[2])
-    elif s[0] == "remove":
-        arr.remove(s[1])
-    elif s[0] == "pop":
-        arr.pop()
-    elif s[0] == "index":
-        print
-        arr.index(s[1])
-    elif s[0] == "count":
-        print
-        arr.count(s[1])
-    elif s[0] == "sort":
-        arr.sort()
-    elif s[0] == "reverse":
-        arr.reverse()
-    elif s[0] == "print":
-        print
-        arr
-
-#exercise13
+#exercise Tuples
 if __name__ == '__main__':
-    n = int(raw_input())
-    integer_list = map(int, raw_input().split())
-    for i in range(n):
-        integer_list[i] = int(integer_list[i])
-t = tuple(integer_list)
-print hash(t)
+    n = int(input())
+    integer_list = tuple(map(int, input().split()))
+    print(hash(integer_list))
+
+#exercise Nested List
 
 1.3 Strings
 
@@ -143,59 +129,66 @@ print hash(t)
 def swap_case(s):
     return s.swapcase()
 if __name__ == '__main__':
-    s = raw_input()
+    s = input()
     result = swap_case(s)
     print result
 
-#exercise15 String Split and Join
+#exercise String Split and Join
 def split_and_join(line):
     words = line.split(" ")
     words = "-".join(words)
     return words
 if __name__ == '__main__':
-    line = raw_input()
+    line = input()
     result = split_and_join(line)
     print result
 
-#exercise16 What's Your Name?
+#exercise What's Your Name?
 def print_full_name(a, b):
     print("Hello %s %s! You just delved into python." % (a,b))
 if __name__ == '__main__':
-    first_name = raw_input()
-    last_name = raw_input()
+    first_name = input()
+    last_name = input()
     print_full_name(first_name, last_name)
 
-#exercise17 Mutations
+#exercise Mutations
 def mutate_string(string, position, character):
     l= list(string)
     l[position] = character
     string = ''.join(l)
     return  string
 if __name__ == '__main__':
-    s = raw_input()
-    i, c = raw_input().split()
+    s = input()
+    i, c = input().split()
     s_new = mutate_string(s, int(i), c)
     print s_new
 
-#exercise18 Find a string
+#exercise Find a string
+
 def count_substring(string, sub_string):
-    counter=0
+    counter = 0
     for i in range(len(string) - len(sub_string) + 1):
-        if string[i:i+len(sub_string)] == sub_string:
-            counter+=1
+        if string[i:i + len(sub_string)] == sub_string:
+            counter += 1
     return counter
-#exercise19 String Validator
 if __name__ == '__main__':
-    s = raw_input()
+    string = input().strip()
+    sub_string = input().strip()
+
+    count = count_substring(string, sub_string)
+    print(count)
+
+#exercise String Validator
+if __name__ == '__main__':
+    s =input()
 print (any(i.isalnum() for i in s))
 print (any(i.isalpha() for i in s))
 print (any(i.isdigit() for i in s))
 print (any(i.islower() for i in s))
 print (any(i.isupper() for i in s))
 
-#exercise20 Text Alignment
-#Replace all ______ with rjust, ljust or center.
-thickness = int(raw_input()) #This must be an odd number
+#exercise Text Alignment
+thickness = int(input()) #This must be an odd number
 c = 'H'
 #Top Cone
 for i in range(thickness):
@@ -213,72 +206,136 @@ for i in range(thickness+1):
 for i in range(thickness):
     print ((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6)
 
-#exercise21 Text Wrap
+#exercise Text Wrap
 import textwrap
+
 def wrap(string, max_width):
     l= (textwrap.fill(string,max_width))
     return l
-if __name__ == '__main__':
-    string, max_width = raw_input(), int(raw_input())
-    result = wrap(string, max_width)
-    print result
-#exercise22
-N, M = map(int,raw_input().split())
-for i in range(0,N/2):
-    print ('.|.'*i).rjust((M-2)/2,'-')+'.|.'+('.|.'*i).ljust((M-2)/2,'-')
-print 'WELCOME'.center(M,'-')
-for i in reversed(range(0,N/2)):
-    print ('.|.'*i).rjust((M-2)/2,'-')+'.|.'+('.|.'*i).ljust((M-2)/2,'-')
-#exercise22
 
-#exercise23 String Formatting
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
+
+
+#exercise Designer Door Mat
+N, M = map(int, input().split())
+for i in range(1,N,2):
+    print ((i*'.|.').center(M, '-'))
+print ('WELCOME'.center(M,'-'))
+for i in range(N-2,-1,-2):
+    print ((i*'.|.').center(M, '-'))
+
+#exercise String Formatting
 def print_formatted(number):
     l = len(bin(n)) - 2
     for i in range(1, n + 1):
         print("{0:{width}d} {0:{width}o} {0:{width}x} {0:{width}b}".format(i, width=l))
 if __name__ == '__main__':
-    n = int(raw_input())
+    n = int(input())
     print_formatted(n)
-#exercise24
-#exercise25
-#exercise26
-#exercise27
+
+#exercise Capitalize
+ a= s.split(" ")
+    b= [i.capitalize() for i in a]
+    return " ".join
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+#exercise The Minion Game
+def minion_game(string):
+    vocali = ['A', 'I', 'O', 'E', 'U']
+    c_t = dict()
+    v_t = dict()
+    kevin = 0
+    stuart = 0
+    count = 0
+    for i in range(len(string)):
+        if string[i] in vocali:
+            kevin = kevin + len(string) - i
+        else:
+            stuart = stuart + len(string) - i
+
+    if stuart > kevin:
+        print("Stuart", stuart)
+    elif stuart < kevin:
+        print("Kevin", kevin)
+    else:
+        print('Draw')
+
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+
+#exercise Merge The Tools!
+def no_rep(t):
+    string= set()
+    a= []
+    for i in t:
+        if i not in string:
+            string.add(i)
+            a.append(i)
+    return "".join(a)
+
+
+def merge_the_tools(string, k):
+     n= len(string)
+     for j in [string[i:i+k] for i in range (0,n,k)]:
+         print(no_rep(j))
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
+
+
+
 
 4 Sets
-#exercise28 Introduction to Set
-from __future__ import division
 def average(array):
     heights = set(array)
     n = len(heights)
     sum_heights = sum(heights)
     average = sum_heights / n
     return average
+
 if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
 
-#exercise 29 No Idea!
-n_m = raw_input().split()
+#exercise No Idea!
+n_m = input().split()
 n_m = map(int, n_m)
-n = map(int, raw_input().split())
-A = set(map(int, raw_input().split()))
-B = set(map(int, raw_input().split()))
-
+n = map(int, input().split())
+A = set(map(int, input().split()))
+B = set(map(int,input().split()))
 happy = 0
 for i in n:
-
     if i in A:
         happy += 1
     elif i in B:
         happy -= 1
+print (happy)
 
-print
-happy
 
-#exercise30 Symmetric Difference RIFAI
-int(raw_input())
-N= raw_input().split()
+#exercise Symmetric Difference
+int(input())
+N= input().split()
 N_int = set(list(map(int, N)))
-int(raw_input())
-M = raw_input().split()
+int(input())
+M = input().split()
 M_int = set(list(map(int, M)))
 lis=[]
 for x in list(N_int.difference(M_int)):
@@ -286,22 +343,33 @@ for x in list(N_int.difference(M_int)):
 for y in list(M_int.difference(N_int)):
     lis.append(y)
 for z in sorted(lis):
-    print z
+    print (z)
 
-#exercise31 set .add()
-
+#exercise Set .add()
 N= int(input())
 countries = set()
-
 for i in range (N):
-    stamps= raw_input()
+    stamps= input()
     countries.add(stamps)
 print (len(countries))
 
-#exercise 32 Discard, removeand pop
+#exercise 32 Discard,Remove and Pop
+n = input()
+s = set(map(int,input().split()))
+a = int(input())
 
-#exercise 33 Set Union Operation
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+for _ in range(a):
+    k = []
+    k = input().split(" ")
+    if k[0] == 'pop':
+        s.pop()
+    elif k[0] == 'remove':
+        s.remove(int(k[1]))
+    elif k[0] == 'discard':
+        s.discard(int(k[1]))
+print(sum(set(s)))
+
+#exercise Set Union Operation
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -309,8 +377,7 @@ french = set(map(int,input().split()))
 un = english.union(french)
 print (len(un))
 
-#exercise 34 Intersection
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+#exercise Set Intersection Operation
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -318,7 +385,7 @@ french = set(map(int,input().split()))
 un = english.intersection(french)
 print (len(un))
 
-#exercise 35 Difference
+#exercise 35 Set Difference Operation
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -326,8 +393,7 @@ french = set(map(int,input().split()))
 un = english.difference(french)
 print (len(un))
 
-#exercise 36 Symmetric Difference
-
+#exercise Symmetric Difference
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -335,11 +401,9 @@ french = set(map(int,input().split()))
 un = english.symmetric_difference(french)
 print (len(un))
 
-#exercise 37 Set Mutations
-
+#exercise Set Mutations
 n = int(input())
 A = set(input().split())
-
 for _ in range (int(input())):
     op = input().split()
     B= input().split()
@@ -353,9 +417,43 @@ for _ in range (int(input())):
         A.update(B)
 print(sum(map(int, A)))
 
-#exercise 38 collections.Counter()
+#exercise The Captain's Room
 from collections import Counter
 
+n=int(input())
+A= list(map(int,input().split()))
+AA= Counter(A)
+
+for i in A:
+    if AA[i]==1:
+        print(i
+#exercise Check Subset
+T = int(input())
+for _ in range(T):
+    n = int(input())
+    A = set(list(map(int, input().split())))
+    m = int(input())
+    B = set(list(map(int, input().split())))
+    print(True if len(A.difference(B)) == 0 else False)
+
+# exercise Check String Superset
+A = set(input().split())
+N = int(input())
+conta = 0
+for _ in range(N):
+    B = set(input().split())
+if len(B.difference(A)) != 0:
+    conta = 1
+if conta == 0:
+    print("True")
+
+else:
+    print("False")
+
+1.5 Collection
+
+#exercise Collections.Counter()-1
+from collections import Counter
 X = int(input())
 collected_shoes = [int(val) for val in input().split()]
 N = int(input())
@@ -371,109 +469,6 @@ for i in range(N):
         shoes_stored[size] -= 1
 
 print(daily_budget)
-
-from collections import namedtuple
-
-n_elements = int(input())
-fields = input().split()
-sum_marks = 0
-
-for _ in range(n_elements):
-    columns = namedtuple('columns', fields)
-    Id, marks, name, classe = input().split()
-    x = columns(Id, marks, name, classe)
-    y = int(x.MARKS)
-    sum_marks += int(y)
-
-print(float(sum_marks / n_elements))
-
-from collections import defaultdict
-dictonary  = defaultdict(list)
-lista=[]
-
-
-n, m = map(int,input().split()) # acquire n and m in input
-
-for i in range(0,n):
-    dictonary [input()].append(i+1)
-
-
-for i in range(0,m): #fill the list with a for cicle
-    lista=lista+[input()]
-
-
-for i in lista: # for the len of lista
-    if i in dictonary : #if you find i in d print togheter
-        print (" ".join(map(str,dictonary [i]) )) #print with space the dictonary as list
-    else:
-        print -1
-
-#exercise 40 collection.namedtuple()
-
-from collections import namedtuple
-n_elements = int(input())
-fields = input().split()
-sum_marks = 0
-for _ in range(n_elements):
-    columns = namedtuple('columns', fields)
-    Id, marks, name, classe = input().split()
-    x = columns(Id, marks, name, classe)
-    y = int(x.MARKS)
-    sum_marks += int(y)
-print(float(sum_marks / n_elements))
-
-#exercise 41 collection.ordered_dict
-from collections import OrderedDict
-n= int(input())
-d= OrderedDict()
-for i in range(n):
-    products,space,quantity = input().rpartition(' ')
-    d[products] = d.get(products,0)+ int(quantity)
-
-for products, quantity in d.items():
-    print(products, quantity)
-
-#exercise 42 Word order
-import collections
-N = int(input())
-dictionary = collections.OrderedDict()
-for i in range(N):
-    words = input()
-    if words in dictionary:
-        dictionary[words] += 1
-    else:
-        dictionary[words] = 1
-print(len(dictionary))
-for key, value in dictionary.items():
-    print(value, end=' ')
-
-#exercise 43
-
-import math
-import os
-import random
-import re
-import sys
-from collections import Counter
-if __name__ == '__main__':
-    s = input()
-    words_count = (word for word in s)
-    c = Counter(words_count).most_common(3)
-    for i in range(0, len(c)):
-        print(' '.join(map(str, c[i])))
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
