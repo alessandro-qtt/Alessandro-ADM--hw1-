@@ -1,9 +1,11 @@
-problem_1: \
-1.1 Introduction
-#exsercise Hello, World!
+
+HOMEWORK PT.1
+
+Section 1.1- Introduction
+#exsercise Hello, World! - 1
 print ("Hello, World!")
 
-#exsercise Python if-else
+#exsercise Python if-else -2
 import math
 import os
 import random
@@ -21,7 +23,7 @@ if __name__ == '__main__':
     elif n % 2 == 0 and n>20:
         print('Not Weird')
 
-#exsercise Arithmetic Operator
+#exsercise Arithmetic Operator -3
 if __name__ == '__main__':
     a = int(input())
     b = int(input())
@@ -29,20 +31,20 @@ if __name__ == '__main__':
     print(a-b)
     print(a*b)
 
-#exercise Division
+#exercise Division -4
 if __name__ == '__main__':
     a = int(input())
     b = int(input())
     print(a//b)
     print(a/b)
 
-#exercise loops
+#exercise Loops -5
 if __name__ == '__main__':
     n = int(input())
 for i in range(0, n):
     print(i * i)
 
-#exercise Write a function
+#exercise Write a function -6
 def is_leap(year):
     leap = False
 
@@ -52,15 +54,15 @@ def is_leap(year):
 year = int(input())
 print(is_leap(year))
 
-#exercise Print function
+#exercise Print function -7
 if __name__ == '__main__':
     n = int(input())
     for i in range(1,n+1):
         print(i,end="")
 
-1.2 Data Types
+Section 1.2 - Data Types
 
-#exercise List Comprehensions
+#exercise List Comprehensions - 1
 if __name__ == '__main__':
     x = int(input())
     y = int(input())
@@ -69,7 +71,7 @@ if __name__ == '__main__':
 permutations = [[i,j,k] for i in range(x+1) for j in range (y+1) for k in range (z+1)if (i+j+k != n)]
 print (permutations)
 
-#exercise Find the Runner-Up Score
+#exercise Find the Runner-Up Score -2
 if __name__ == '__main__':
     n = int(input())
     arr = list(map(int,input().split()))
@@ -77,7 +79,7 @@ if __name__ == '__main__':
     arr.remove(max(arr))
 print(arr [-2])
 
-#exercise Finding the Percentage
+#exercise Finding the Percentage - 3
 if __name__ == '__main__':
     n = int(input())
     student_marks = {}
@@ -92,7 +94,7 @@ if __name__ == '__main__':
     average = sum_values/lenght
     print("{0:.2f}".format(average))
 
-#exersice Lists
+#exersice Lists -4
 if __name__ == '__main__':
     N = int(input())
     results = []
@@ -115,17 +117,17 @@ if __name__ == '__main__':
         if command == 'sort':
             results = sorted(results)
 
-#exercise Tuples
+#exercise Tuples -5
 if __name__ == '__main__':
     n = int(input())
     integer_list = tuple(map(int, input().split()))
     print(hash(integer_list))
 
-#exercise Nested List
+#exercise Nested List -6
 
-1.3 Strings
+Section 1.3 - Strings
 
-#exercise14 Swap Case
+#exercise Swap Case-1
 def swap_case(s):
     return s.swapcase()
 if __name__ == '__main__':
@@ -133,7 +135,7 @@ if __name__ == '__main__':
     result = swap_case(s)
     print result
 
-#exercise String Split and Join
+#exercise String Split and Join-2
 def split_and_join(line):
     words = line.split(" ")
     words = "-".join(words)
@@ -143,7 +145,7 @@ if __name__ == '__main__':
     result = split_and_join(line)
     print result
 
-#exercise What's Your Name?
+#exercise What's Your Name?-3
 def print_full_name(a, b):
     print("Hello %s %s! You just delved into python." % (a,b))
 if __name__ == '__main__':
@@ -151,7 +153,7 @@ if __name__ == '__main__':
     last_name = input()
     print_full_name(first_name, last_name)
 
-#exercise Mutations
+#exercise Mutations-4
 def mutate_string(string, position, character):
     l= list(string)
     l[position] = character
@@ -163,8 +165,7 @@ if __name__ == '__main__':
     s_new = mutate_string(s, int(i), c)
     print s_new
 
-#exercise Find a string
-
+#exercise Find a string-5
 def count_substring(string, sub_string):
     counter = 0
     for i in range(len(string) - len(sub_string) + 1):
@@ -178,7 +179,7 @@ if __name__ == '__main__':
     count = count_substring(string, sub_string)
     print(count)
 
-#exercise String Validator
+#exercise String Validator-6
 if __name__ == '__main__':
     s =input()
 print (any(i.isalnum() for i in s))
@@ -187,7 +188,7 @@ print (any(i.isdigit() for i in s))
 print (any(i.islower() for i in s))
 print (any(i.isupper() for i in s))
 
-#exercise Text Alignment
+#exercise Text Alignment-7
 thickness = int(input()) #This must be an odd number
 c = 'H'
 #Top Cone
@@ -206,9 +207,8 @@ for i in range(thickness+1):
 for i in range(thickness):
     print ((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6)
 
-#exercise Text Wrap
+#exercise Text Wrap-8
 import textwrap
-
 def wrap(string, max_width):
     l= (textwrap.fill(string,max_width))
     return l
@@ -219,7 +219,7 @@ if __name__ == '__main__':
     print(result)
 
 
-#exercise Designer Door Mat
+#exercise Designer Door Mat-9
 N, M = map(int, input().split())
 for i in range(1,N,2):
     print ((i*'.|.').center(M, '-'))
@@ -227,7 +227,7 @@ print ('WELCOME'.center(M,'-'))
 for i in range(N-2,-1,-2):
     print ((i*'.|.').center(M, '-'))
 
-#exercise String Formatting
+#exercise String Formatting-10
 def print_formatted(number):
     l = len(bin(n)) - 2
     for i in range(1, n + 1):
@@ -236,7 +236,7 @@ if __name__ == '__main__':
     n = int(input())
     print_formatted(n)
 
-#exercise Capitalize
+#exercise Capitalize-11
  a= s.split(" ")
     b= [i.capitalize() for i in a]
     return " ".join
@@ -252,7 +252,7 @@ if __name__ == '__main__':
 
     fptr.close()
 
-#exercise The Minion Game
+#exercise The Minion Game-12
 def minion_game(string):
     vocali = ['A', 'I', 'O', 'E', 'U']
     c_t = dict()
@@ -278,7 +278,7 @@ if __name__ == '__main__':
     s = input()
     minion_game(s)
 
-#exercise Merge The Tools!
+#exercise Merge The Tools!-13
 def no_rep(t):
     string= set()
     a= []
@@ -298,10 +298,12 @@ if __name__ == '__main__':
     string, k = input(), int(input())
     merge_the_tools(string, k)
 
+#MANCA UN ESERCIZIO Alphabet Rangoli
 
 
 
-4 Sets
+Section 1.4 - Sets
+# exercise 1 Introduction to Sets-1
 def average(array):
     heights = set(array)
     n = len(heights)
@@ -315,7 +317,7 @@ if __name__ == '__main__':
     result = average(arr)
     print(result)
 
-#exercise No Idea!
+#exercise No Idea!-2
 n_m = input().split()
 n_m = map(int, n_m)
 n = map(int, input().split())
@@ -330,7 +332,7 @@ for i in n:
 print (happy)
 
 
-#exercise Symmetric Difference
+#exercise Symmetric Difference-3
 int(input())
 N= input().split()
 N_int = set(list(map(int, N)))
@@ -345,7 +347,7 @@ for y in list(M_int.difference(N_int)):
 for z in sorted(lis):
     print (z)
 
-#exercise Set .add()
+#exercise Set .add()-4
 N= int(input())
 countries = set()
 for i in range (N):
@@ -353,7 +355,7 @@ for i in range (N):
     countries.add(stamps)
 print (len(countries))
 
-#exercise 32 Discard,Remove and Pop
+#exercise Discard,Remove and Pop-5
 n = input()
 s = set(map(int,input().split()))
 a = int(input())
@@ -369,7 +371,7 @@ for _ in range(a):
         s.discard(int(k[1]))
 print(sum(set(s)))
 
-#exercise Set Union Operation
+#exercise Set Union Operation-6
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -377,7 +379,7 @@ french = set(map(int,input().split()))
 un = english.union(french)
 print (len(un))
 
-#exercise Set Intersection Operation
+#exercise Set Intersection Operation-7
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -385,7 +387,7 @@ french = set(map(int,input().split()))
 un = english.intersection(french)
 print (len(un))
 
-#exercise 35 Set Difference Operation
+#exercise 35 Set Difference Operation-8
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -393,7 +395,7 @@ french = set(map(int,input().split()))
 un = english.difference(french)
 print (len(un))
 
-#exercise Symmetric Difference
+#exercise Symmetric Difference Operation-9
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -401,7 +403,7 @@ french = set(map(int,input().split()))
 un = english.symmetric_difference(french)
 print (len(un))
 
-#exercise Set Mutations
+#exercise Set Mutations-10
 n = int(input())
 A = set(input().split())
 for _ in range (int(input())):
@@ -417,7 +419,7 @@ for _ in range (int(input())):
         A.update(B)
 print(sum(map(int, A)))
 
-#exercise The Captain's Room
+#exercise The Captain's Room-11
 from collections import Counter
 
 n=int(input())
@@ -427,7 +429,7 @@ AA= Counter(A)
 for i in A:
     if AA[i]==1:
         print(i
-#exercise Check Subset
+#exercise Check Subset-12
 T = int(input())
 for _ in range(T):
     n = int(input())
@@ -436,7 +438,7 @@ for _ in range(T):
     B = set(list(map(int, input().split())))
     print(True if len(A.difference(B)) == 0 else False)
 
-# exercise Check String Superset
+# exercise Check String Superset-13
 A = set(input().split())
 N = int(input())
 conta = 0
@@ -450,7 +452,9 @@ if conta == 0:
 else:
     print("False")
 
-1.5 Collection
+    NE MANCANO 22222
+
+Section 1.5 - Collection
 
 #exercise Collections.Counter()-1
 from collections import Counter
@@ -470,12 +474,609 @@ for i in range(N):
 
 print(daily_budget)
 
+#exercise Default Dictonary -2
+from collections import defaultdict
+dictonary = defaultdict(list)
+lista = []
+n, m = map(int, input().split())  # acquire n and m in input
+for i in range(0, n):
+    dictonary[input()].append(i + 1)
+for i in range(0, m):  # fill the list with a for cicle
+    lista = lista + [input()]
+for i in lista:  # for the len of lista
+        if i in dictonary:  # if you find i in d print togheter
+        print(" ".join(map(str, dictonary[i])))  # print with space the dictonary as list
+        else:
+        print - 1
+
+#exercise Collections.namedtuple()-3
+from collections import namedtuple
+N = int(input())
+primo = input().split()
+grades = namedtuple("grades", primo)
+ave = []
+for _ in range(N):
+    ins = (sum([int(grades(*input().split()).MARKS)]) / N)
+    ave.append(ins)
+print(sum(ave))
+
+# exercise Collections.OrderedDict()-4
+from collections import OrderedDict
+n = int(input())
+d = OrderedDict()
+
+for i in range(n):
+    products, space, quantity = input().rpartition(' ')
+d[products] = d.get(products, 0) + int(quantity)
+    for products, quantity in d.items():
+print(products, quantity)
+
+#exercise Word Order-5
+import collections
+N = int(input())
+dictionary = collections.OrderedDict()
+
+for i in range(N):
+    words = input()
+    if words in dictionary:
+        dictionary[words] +=1
+    else:
+        dictionary[words] = 1
+
+print(len(dictionary))
+
+for key, value in dictionary.items():
+    print(value,end=' ')
+
+#exercise Collection.denque()-6
+from collections import deque
+d = deque()
+N = int(input())
+
+for _ in range(N):
+    x = input().split(" ")
+    command = x[0]
+
+    if command == "append":
+        d.append(int(x[1]))
+    if command == "pop":
+        d.pop()
+    if command == "popleft":
+        d.popleft()
+    if command == "appendleft":
+        d.appendleft(int(x[1]))
+for i in range(len(d)):
+    print(d[i], end = " ")
+
+#exercise Company Logo-7
+from collections import Counter
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    s = input()
+    a = Counter(s)
+    b = sorted(a.items(), key=lambda item: (-item[1], item[0]))
+    for i in range(3):
+        print(b[i][0], b[i][1])
+
+#exercise Pilling Up!-8
+N = int(input())
+for _ in range(N):
+    n = int(input())
+    a = list(map(int, input().split()))
+    b = sorted(a, reverse = True)
+    if b[0] == a[0] or b[0] == a[n-1]:
+        print("Yes")
+    else:
+        print("No")
+
+
+Section 1.6 - Date and Time
+
+#exercise Calendar Module-1
+import calendar
+day,month,year =map(int,input().split())
+print(list(calendar.day_name)[calendar.weekday(year,day,month)].upper())
+
+#exercise Time Delta-2
+import math
+import os
+import random
+import re
+import sys
+from datetime import datetime
+# Complete the time_delta function below.
+def time_delta(t1, t2):
+    formato_orario = '%a %d %b %Y %H:%M:%S %z'
+    t1 = datetime.strptime(t1, formato_orario)
+    t2 = datetime.strptime(t2, formato_orario)
+    return str(int(abs((t1-t2).total_seconds())))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        t1 = input()
+
+        t2 = input()
+
+        delta = time_delta(t1, t2)
+
+        fptr.write(delta + '\n')
+
+    fptr.close()
+
+Section 1.7 Exeptions
+#exercise - Exeptions-1
+for i in range(int(input())):
+
+    try:
+        a,b=map(int,input().split())
+        print(a//b)
+    except Exception as e:
+        print("Error Code:",e)
+
+Section 1.8 Built In
+
+#exercise Zipped!-1
+n, x = map(int, input().split())
+results = []
+for _ in range(x):
+    results.append( map(float, input().split()) )
+
+for i in zip(*results):
+    avg= sum(i)/len(i)
+    print(avg)
+
+#exercise Athlete Sort-2
+import math
+import os
+import random
+import re
+import sys
+if __name__ == '__main__':
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    arr = []
+
+    for _ in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    k = int(input())
+
+    s = sorted(arr, key = lambda x: x[k])
+
+    for i in range(n):
+        print(str.join(' ', map(str, s[i])))
+
+#exercise GinortS-3
+import re
+string = input()
+cases = [r'[a-z]', r'[A-Z]' , r'[13579]' ,r'[02468]']
+b = [r for cases in cases for r in sorted(re.findall(cases, string))]
+print("".join(b))
+
+Section 1.9 Python Functionals
+
+#exercise Map and lambda Function-1
+cube = lambda x:x ** 3
+def fibonacci(n):
+    a=0
+    b=1
+    l=[]
+    if n== 0:
+        pass
+    elif n==1:
+        l.append(a)
+    else:
+        l.append(a)
+        l.append(b)
+        for i in range (2,n):
+            c= a+b
+            a=b
+            b=c
+            l.append(c)
+    return l
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
+
+Section 1.10  Regex and Parsing
+
+#exercise Detect Floating Point Number-1
+import re
+n = int(input())
+for _ in range(n):
+    print(bool(re.match(r'^[-+]?[0-9]*\.[0-9]+$', input())))
+
+#exercise Re.split()-2
+regex_pattern = r"[\,*\.*]"
+import re
+print("\n".join(re.split(regex_pattern, input())))
+
+#exercise Group(), Groups() & Groupdict()-3
+import re
+alphanumeric = input()
+m = re.search(r'([a-z A-Z 0-9])\1', alphanumeric)
+if m:
+    print(m.group(1))
+else:
+    print(-1)
+
+#exercise Re.findall()& Re.finditer()-4
+import re
+v = "aeiou"
+c = "qwrtypsdfghjklzxcvbnm"
+m = re.findall(r"(?<=[%s])([%s]{2,})[%s]" % (c, v, c), input(), flags = re.I)
+print('\n'.join(m or ['-1']))
+
+
+#exercise Re.star()& Re.end()-5
+import re
+text, pattern = input(), input()
+m= list(re.finditer("(?=(%s))"%pattern,text))
+if not m:
+    print((-1,-1))
+for i in m:
+    print((i.start(1),i.end(1)-1))
+
+
+#exercise Validating Roman Numerals-6
+regex_pattern = r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+
+import re
+print(str(bool(re.match(regex_pattern, input()))))
+
+#exercise Validating phone numbers-7
+import re
+n=int(input())
+reges= r"^[789]{1}\d{9}$"
+for _ in range(n):
+    line = input()
+    if re.match(reges, line):
+        print("YES")
+    else:
+        print("NO")
+
+#exercise 8
+#exercise 9
+#exercise 10
+#exercise 11
+#exercise 12
+#exercise 13
+#exercise 14
+#exercise 15
+#exercise 16
+#exercise 17
+
+Section 1.11  Xml
+
+#exercise Xml Find the score-1
+import sys
+import xml.etree.ElementTree as etree
+sum_get= 0
+def get_attr_number(node):
+    a= sum(get_attr_number(child) for child in node);
+    return len(node.attrib) +a
+
+
+if __name__ == '__main__':
+    sys.stdin.readline()
+    xml = sys.stdin.read()
+    tree = etree.ElementTree(etree.fromstring(xml))
+    root = tree.getroot()
+    print(get_attr_number(root))
+
+#exercise Find the maximum Depth-2
+import xml.etree.ElementTree as etree
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    level += 1
+    if (maxdepth<level):
+        maxdepth= level
+    for child in elem:
+        depth(child,level)
+
+if __name__ == '__main__':
+    n = int(input())
+    xml = ""
+    for i in range(n):
+        xml =  xml + input() + "\n"
+    tree = etree.ElementTree(etree.fromstring(xml))
+    depth(tree.getroot(), -1)
+    print(maxdepth)
+
+
+Section 1.12 - Closures and Decorations
+#exercise Standardize Mobile Number Using Decorators-1
+def wrapper(f):
+    def fun(l):
+        f(["+91 "+c[-10:-5]+" "+c[-5:] for c in l])
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l)
+
+#exercise Name directory-2
+import operator
+def person_lister(f):
+    def inner(people):
+        return map(f, sorted(people, key=lambda x: int(x[2])))
+    return inner
+
+@person_lister
+def name_format(person):
+    return ("Mr. " if person[3] == "M" else "Ms. ") + person[0] + " " + person[1]
+
+if __name__ == '__main__':
+    people = [input().split() for i in range(int(input()))]
+    print(*name_format(people), sep='\n')
+
+
+Section 1.13 Numpy
+
+#exercise Array-1
+import numpy
+
+def arrays(arr):
+    a=numpy.array(arr,float)
+    return a[::-1]
+
+arr = input().strip().split(' ')
+result = arrays(arr)
+print(result)
+
+#exercise Shape and Reshape-2
+import numpy
+n= input().split()
+print(numpy.array(n,int).reshape(3,3))
+
+#exercise Transpose and Flatten-3
+import numpy
+n, m = map(int, input().split())
+array = numpy.array([input().strip().split() for i in range(0,n)], int)
+print (array.transpose())
+print (array.flatten())
+
+#exercise Concatenate-4
+
+import numpy
+n, m, p = map(int,input().split())
+
+a = numpy.array([input().split() for i in range(0,n)],int)
+b = numpy.array([input().split() for _ in range(0,m)],int)
+print(numpy.concatenate((a, b), axis = 0))
+
+#exercise Zeros and Ones-5
+import numpy
+extension= list(map(int,input().split()))
+print (numpy.zeros(extension,dtype = numpy.int))
+print (numpy.ones(extension, dtype = numpy.int))
+
+#exercise Eye and Identity-6
+import numpy
+numpy.set_printoptions(legacy='1.13')
+n,m=map(int,input().split())
+print (numpy.eye(n,m,k = 0))
+
+#exercise Array Mathematics-7
+import numpy
+n,m=map(int,input().split())
+a=numpy.array([input().split() for i in range(n)],int)
+b=numpy.array([input().split() for i in range(n)],int)
+print (a+b)
+print (a-b)
+print (a*b)
+print (a//b)
+print (a%b)
+print (a**b)
+
+#exercise Floor, Ceil and Rint-8
+import numpy
+numpy.set_printoptions(sign=' ')
+arr=numpy.array(input().split(),float)
+print (numpy.floor(arr))
+print (numpy.ceil(arr))
+print (numpy.rint(arr))
+
+#exercise Sum and Prod-9
+import numpy
+n,m=map(int,input().split())
+arr = numpy.array([input().split() for _ in range(n)],int)
+a=numpy.sum(arr, axis = 0)
+print (numpy.prod(a, axis = None))
+
+#exercise Min and Max-10
+import numpy
+n,m=map(int,input().split())
+arr = numpy.array([input().split() for _ in range(n)],int)
+a= numpy.min(arr, axis = 1)
+print (numpy.max(a))
+
+#exercise Mean, var and std-11
+import numpy
+numpy.set_printoptions(legacy='1.13')
+n,m=map(int,input().split())
+arr = numpy.array([input().split() for _ in range(n)],int)
+print (numpy.mean(arr, axis = 1))
+print (numpy.var(arr, axis = 0))
+print (numpy.std(arr))
+
+#exercise Dot and Cross-12
+import numpy
+n=int(input())
+a = numpy.array([input().split() for _ in range(n)],int)
+b = numpy.array([input().split() for _ in range(n)],int)
+print (numpy.dot(a, b))
+
+#exercise Inner and Outer-13
+
+import numpy
+a = numpy.array(input().split(), int)
+b = numpy.array(input().split(), int)
+print (numpy.inner(a,b))
+print (numpy.outer(a,b))
+
+#exercise Polynomials-14
+import numpy
+a = numpy.array(input().split(), float)
+x= float(input())
+print (numpy.polyval(a, x))
+
+#exercise Linear Algebra-15
+import numpy
+n = int(input())
+a = numpy.array([input().split() for _ in range(n)], float)
+print(round(numpy.linalg.det(a),2))
+
+
+
+HOMEWORK PT.2
+
+#exercise Birthday Cake Candles-1
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'birthdayCakeCandles' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER_ARRAY candles as parameter.
+#
+
+def birthdayCakeCandles(candles):
+    return candles.count(max(candles))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    candles_count = int(input().strip())
+
+    candles = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(candles)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+#exercise Number Line Jumps-2
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the kangaroo function below.
+def kangaroo(x1, v1, x2, v2):
+
+    if x1>x2 and v1>v2:
+        return "NO"
+    if x1<x2 and v1<v2:
+        return "NO"
+    if v1==v2:
+        return "NO"
+    if (x2-x1)%(v1-v2)==0 or (x2-x1)%(v2-v1)==0:
+        return "YES"
+    else:
+        return "NO"
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    x1V1X2V2 = input().split()
+
+    x1 = int(x1V1X2V2[0])
+
+    v1 = int(x1V1X2V2[1])
+
+    x2 = int(x1V1X2V2[2])
+
+    v2 = int(x1V1X2V2[3])
+
+    result = kangaroo(x1, v1, x2, v2)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+#exercise Strange Advertising-3
 
 
 
 
 
 
+
+
+
+
+
+#exercise Recursive digit Sum-4
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the superDigit function below.
+def superDigit(n, k):
+    def sum_digit(v):
+        if v < 10:
+            return v
+        s = sum(int(i) for i in str(v))
+        return sum_digit(s)
+    x= sum_digit(int(n))
+    return sum_digit(x*k)
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nk = input().split()
+
+    n = nk[0]
+
+    k = int(nk[1])
+
+    result = superDigit(n, k)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+
+#exercise Insertion Sort - Part1-5
+
+
+#exercise Insertion Sort - Part 2-6
 
 
 
