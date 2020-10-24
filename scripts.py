@@ -124,6 +124,25 @@ if __name__ == '__main__':
     print(hash(integer_list))
 
 #exercise Nested List -6
+if __name__ == '__main__':
+    dic={}
+    a = list()
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        if score in dic:
+            dic[score].append(name)
+        else:
+            dic[score]=[name]
+        if score not in a:
+            a.append(score)
+    first_lower= min(a)
+    a.remove(first_lower)
+    second_lower= min(a)
+    dic[second_lower].sort()
+    for i in dic[second_lower]:
+        print(i)
+
 
 Section 1.3 - Strings
 
@@ -298,11 +317,30 @@ if __name__ == '__main__':
     string, k = input(), int(input())
     merge_the_tools(string, k)
 
-#MANCA UN ESERCIZIO Alphabet Rangoli
+#exercise Alphabet Rangoli-14
+def print_rangoli(size):
+    import string
+    font = string.ascii_lowercase
+    c=[]
+
+    for i in range(n):
+        s = "-".join(font[i:n])
+        c.append(s[::-1]+s[1:])
+    width = len(c[0])
+    for i in range(n-1, 0, -1):
+        print(c[i].center(width, "-"))
+    for i in range(n):
+        print(c[i].center(width, "-"))
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
 
 
 
 Section 1.4 - Sets
+
 # exercise 1 Introduction to Sets-1
 def average(array):
     heights = set(array)
@@ -452,7 +490,7 @@ if conta == 0:
 else:
     print("False")
 
-    NE MANCANO 22222
+
 
 Section 1.5 - Collection
 
@@ -750,9 +788,26 @@ for _ in range(n):
     else:
         print("NO")
 
-#exercise 8
-#exercise 9
+#exercise Validating and parsing Email Addresses-8
+import re
+n = int(input())
+for _ in range(n):
+    x, y = input().split(' ')
+    m = re.match(r'<[A-Za-z](\w|-|\.|_)+@[A-Za-z]+\.[A-Za-z]{1,3}>', y)
+    if m:
+        print(x,y)
+
+#exercise Hex Color Code-9
+import re
+n= int(input())
+
+for _ in range(n):
+    font = re.findall(r':?.(#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3})', input())
+    if font:
+        print(*font, sep='\n')
+
 #exercise 10
+
 #exercise 11
 #exercise 12
 #exercise 13
@@ -952,20 +1007,11 @@ print(round(numpy.linalg.det(a),2))
 HOMEWORK PT.2
 
 #exercise Birthday Cake Candles-1
-#!/bin/python3
-
 import math
 import os
 import random
 import re
 import sys
-
-#
-# Complete the 'birthdayCakeCandles' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts INTEGER_ARRAY candles as parameter.
-#
 
 def birthdayCakeCandles(candles):
     return candles.count(max(candles))
@@ -984,8 +1030,6 @@ if __name__ == '__main__':
     fptr.close()
 
 #exercise Number Line Jumps-2
-#!/bin/python3
-
 import math
 import os
 import random
@@ -1027,16 +1071,30 @@ if __name__ == '__main__':
     fptr.close()
 
 #exercise Strange Advertising-3
+import math
+import os
+import random
+import re
+import sys
 
+def viralAdvertising(n):
+    shared = 2
+    cumulative= 2
+    for _ in range(n-1):
+        cumulative = cumulative*3//2
+        shared= shared + cumulative
+    return shared
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
+    n = int(input())
 
+    result = viralAdvertising(n)
 
+    fptr.write(str(result) + '\n')
 
-
-
-
-
+    fptr.close()
 
 #exercise Recursive digit Sum-4
 #!/bin/python3
@@ -1073,10 +1131,58 @@ if __name__ == '__main__':
 
     fptr.close()
 
-#exercise Insertion Sort - Part1-5
+#exercise Insertion Sort-Part1-5
+import math
+import os
+import random
+import re
+import sys
+def insertionSort1(n, arr):
+    e= arr[-1]
+    arr[-1]=arr[-2]
+    i = n - 2
+    while True:
+        print(*arr, sep = ' ')
+        if arr[i-1]>e and i>0:
+            arr[i]= arr[i-1]
+            i-= 1
+        else:
+            arr[i]= e
+            print(*arr, sep= ' ')
+            break
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort1(n, arr)
+
+#exercise Insertion Sort-Part 2 -6
+import math
+import os
+import random
+import re
+import sys
+def insertionSort2(n, arr):
+    for i in range(1, len(arr)):
+        var_temp = arr[i]
+        j = i
+        while j > 0 and var_temp < arr[j-1]:
+            arr[j] = arr[j-1]
+            j -= 1
+        arr[j] = var_temp
+        print (' '.join(str(j) for j in arr))
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    insertionSort2(n, arr)
 
 
-#exercise Insertion Sort - Part 2-6
+
 
 
 
