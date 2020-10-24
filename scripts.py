@@ -806,12 +806,99 @@ for _ in range(n):
     if font:
         print(*font, sep='\n')
 
-#exercise 10
+#exercise HTML Parser- Part 1- 11
+from html.parser import HTMLParser
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print ('Start :', tag)
+        if bool(attrs)== True:
+            for items in attrs:
+                print ('->', items[0], '>', items[1])
 
-#exercise 11
-#exercise 12
-#exercise 13
-#exercise 14
+    def handle_endtag(self, tag):
+        print ('End   :', tag)
+
+    def handle_startendtag(self, tag, attrs):
+        print ('Empty :', tag)
+        if bool(attrs)== True:
+            for items in attrs:
+                print ('->', items[0], '>', items[1])
+
+
+parser = MyHTMLParser()
+for _ in range(int(input())):
+    parser.feed(input())
+
+#exercise HTML Parser- Part 2-11
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_comment(self,data):
+        if '\n' in data:
+            print('>>> Multi-line Comment')
+        else:
+            print('>>> Single-line Comment')
+        print(data)
+    def handle_data (self,data):
+        if data== '\n':
+            return
+        else:
+            print(">>> Data")
+            print(data)
+html = ""
+for i in range(int(input())):
+    html += input().rstrip()
+    html += '\n'
+
+parser = MyHTMLParser()
+parser.feed(html)
+parser.close()
+
+#exercise Detect HTML tags, attributes and attributes value-12
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        for at in attrs:
+            print("-> {} > {}".format(at[0], at[1]))
+    def handle_startendtag(self, tag, attrs):
+        print(tag)
+        for at in attrs:
+            print("-> {} > {}".format(at[0], at[1]))
+
+html = ""
+for i in range(int(input())):
+    html += input().rstrip()
+    html += '\n'
+
+parser = MyHTMLParser()
+parser.feed(html)
+parser.close()
+
+#exercise Valid UID-13
+import re
+n= int(input())
+
+for i in range (n):
+    if re.match(r'^(?!.*(.).*\1)(?=(?:.*[A-Z]){2,})(?=(?:.*\d){3,})[a-zA-Z0-9]{10}$', input()):
+        print('Valid')
+    else:
+        print("Invalid")
+
+#exercise Validating Credit Card -14
+import re
+TESTER = re.compile(
+    r"^"
+    r"(?!.*(\d)(-?\1){3})"
+    r"[456]"
+    r"\d{3}"
+    r"(?:-?\d{4}){3}"
+    r"$")
+
+for _ in range(int(input().strip())):
+    print("Valid" if TESTER.search(input().strip()) else "Invalid")
+
 #exercise 15
 #exercise 16
 #exercise 17
