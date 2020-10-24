@@ -899,9 +899,44 @@ TESTER = re.compile(
 for _ in range(int(input().strip())):
     print("Valid" if TESTER.search(input().strip()) else "Invalid")
 
-#exercise 15
-#exercise 16
-#exercise 17
+#exercise Regex Substitution-15
+import re
+n = int(input())
+for i in range(n):
+    a = input()
+    while " && " in a or " || " in a:
+        a = re.sub(r'\s\&\&\s',' and ',a)
+        a = re.sub(r'\s\|\|\s',' or ',a)
+    print(a)
+#exercise Validating Postal Code-16
+regex_integer_in_range = r"^[1-9][0-9]{5}$"
+regex_alternating_repetitive_digit_pair = r"(\d)(?=(\d)\1)"
+import re
+P = input()
+print (bool(re.match(regex_integer_in_range, P))
+and len(re.findall(regex_alternating_repetitive_digit_pair, P)) < 2)
+#exercise MAtrix Script -17
+import math
+import os
+import random
+import re
+import sys
+
+first_multiple_input = input().rstrip().split()
+n = int(first_multiple_input[0])
+m = int(first_multiple_input[1])
+matrix = []
+for i in range(n):
+    a = str(input())
+    matrix.append(a)
+s = ''
+for i in range (m):
+    for a in matrix:
+        s += a[i]
+print ( re.sub(r"(?<=[a-zA-Z])([\$\#\!\@\%\&\s]+)(?=[a-zA-Z])", " ", s))
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
 
 Section 1.11  Xml
 
