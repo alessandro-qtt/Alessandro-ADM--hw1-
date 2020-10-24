@@ -915,7 +915,8 @@ import re
 P = input()
 print (bool(re.match(regex_integer_in_range, P))
 and len(re.findall(regex_alternating_repetitive_digit_pair, P)) < 2)
-#exercise MAtrix Script -17
+
+#exercise Matrix Script -17
 import math
 import os
 import random
