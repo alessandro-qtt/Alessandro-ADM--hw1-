@@ -369,7 +369,6 @@ for i in n:
         happy -= 1
 print (happy)
 
-
 #exercise Symmetric Difference-3
 int(input())
 N= input().split()
@@ -425,7 +424,7 @@ french = set(map(int,input().split()))
 un = english.intersection(french)
 print (len(un))
 
-#exercise 35 Set Difference Operation-8
+#exercise Set Difference Operation-8
 n_engl = input()
 english = set(map(int,input().split()))
 n_french = input()
@@ -466,7 +465,8 @@ AA= Counter(A)
 
 for i in A:
     if AA[i]==1:
-        print(i
+        print(i)
+
 #exercise Check Subset-12
 T = int(input())
 for _ in range(T):
@@ -651,6 +651,7 @@ if __name__ == '__main__':
     fptr.close()
 
 Section 1.7 Exeptions
+
 #exercise - Exeptions-1
 for i in range(int(input())):
 
@@ -806,7 +807,7 @@ for _ in range(n):
     if font:
         print(*font, sep='\n')
 
-#exercise HTML Parser- Part 1- 11
+#exercise HTML Parser- Part 1- 10
 from html.parser import HTMLParser
 class MyHTMLParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
@@ -979,6 +980,7 @@ if __name__ == '__main__':
 
 
 Section 1.12 - Closures and Decorations
+
 #exercise Standardize Mobile Number Using Decorators-1
 def wrapper(f):
     def fun(l):
@@ -1013,7 +1015,6 @@ Section 1.13 Numpy
 
 #exercise Array-1
 import numpy
-
 def arrays(arr):
     a=numpy.array(arr,float)
     return a[::-1]
