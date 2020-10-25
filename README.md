@@ -4,12 +4,13 @@ It is divided into two parts: <br>
 The first one contains the lines of code concerning the individual Hacker Rank exercises. <br>
 They are reported according to the following rule: 
 
-####Problem 1 
+**Problem 1** <br>
 *Section 1.n - name of the section* <br>
 *exercise name - number of the exercise in the following section*
 
-####Problem 2
-<p> The second one contains the lines of code concerning the six exercise about algorithms:<br> 
+The second one contains the lines of code concerning the six exercise about algorithms:<br> 
+
+**Problem 2** <br>
 Section 2.n - name of the section <br>
 exercise name - number of the exercise in the following section <br>
 
