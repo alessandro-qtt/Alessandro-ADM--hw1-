@@ -1,4 +1,4 @@
-##What?
+**_What?_**
 <p> The scripts.py file contains the code written to solve the exercises of the different sections on Hacker Rank!
 It is divided into two parts: <br>
 The first one contains the lines of code concerning the individual Hacker Rank exercises. <br>
